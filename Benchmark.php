@@ -10,7 +10,7 @@ class Bench {
 	private $start;
 
 	public function __construct() {
-		$this-&gt;start = $this-&gt;utime();
+		$this->start = $this->utime();
 	}
 
 	private function utime()
@@ -24,17 +24,17 @@ class Bench {
 	public function pt($name = "")
 	{
 		if (!$name)
-			$this-&gt;points[] = $this-&gt;utime();
+			$this->points[] = $this->utime();
 		else
-			$this-&gt;points[$name] = $this-&gt;utime();
+			$this->points[$name] = $this->utime();
 	}
 
 	public function __destruct()
 	{
-		$this-&gt;pt("total");
-		foreach ($this-&gt;points as $name =&gt; $pt)
+		$this->pt("total");
+		foreach ($this->points as $name => $pt)
 		{
-			echo $name.": ".round(abs($this-&gt;start - $pt),4)."\n";
+			echo $name.": ".round(abs($this->start - $pt),4)."\n";
 		}
 	}
 }
